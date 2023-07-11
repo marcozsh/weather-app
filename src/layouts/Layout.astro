@@ -1,0 +1,28 @@
+---
+import '../styles/main.css'
+
+export interface Props {
+	title: string
+}
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Control de peso">
+    	<meta name="keywords" content="peso, control, control de peso">
+    	<meta name="author" content="Marco Antonio Peña Romero">
+    	<meta name="robots" content="index"/>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/src/assets/img/cash.png" />
+		<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

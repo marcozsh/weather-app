@@ -1,0 +1,120 @@
+/*GLOBAL PARAMETRES*/
+:root {
+    --background: linear-gradient(220.55deg, #418CB7 0%, #FF8570 100%);
+}
+
+html {
+    background: var(--background);
+    font-family: 'Comfortaa';
+    color: white;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    backdrop-filter: blur(3021300px);
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+body {
+    width: 100vw;
+}
+
+
+/*HEADER*/
+
+.header {
+    background-color: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(200px);
+    display: flex;
+    width: 14rem;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.header-mobile {
+    background-color: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100%;
+    visibility: visible;
+    z-index: 10;
+    animation: 1s ease-in 0s 1 normal none running fadeIn;
+}
+
+.header-mobile-hidden {
+    display: none;
+}
+
+
+
+.header nav a,
+.header-mobile nav a {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 1.2rem;
+    line-height: 5rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+}
+
+.header nav a:hover,
+.header-mobile nav a:hover {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 1.2rem;
+    line-height: 5rem;
+    color: #5d5bf1;
+    text-decoration: none;
+    animation: fadeIn;
+    animation-duration: 0.2s;
+}
+
+.header #header-logo,
+.header-mobile #header-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header #header-nav,
+.header-mobile #header-logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8em 0px 8em 0px;
+}
+
+/*HEADER*/
+
+/*MAIN PAGE*/
+.main-page {
+    width: auto;
+    padding-left: 15rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/*MAIN PAGE*/

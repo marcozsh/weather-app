@@ -1,0 +1,85 @@
+---
+import '../styles/main.css'
+import Button from './Button.astro';
+---
+<article class="landing">
+    <h1 class="title">Consultor de tiempo</h1>
+    <div class="input-container">
+        <input type="text" class="location" id="location" placeholder="Ejemplo: Santiago">
+        <div class="highlight"></div>
+    </div>
+    <br>
+    <Button content="Consultar Clima" clase="push-button"/>
+    <h2 class="city"></h2>
+    <h2 class="degress"></h2>
+</article>
+
+
+<style>
+    .landing{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .title{
+        font-size: 4rem;
+    }
+    .input-container{
+        position: relative;
+    }
+    .input-container input{
+        font-size: 1em;
+        padding: 0.6em 1em;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        width: 40rem;
+        max-width: 200px;
+        color: #333;
+    }
+    .input-container input:hover{
+        background-color: #f2f2f2;
+    }
+
+    .input-container input:focus {
+        outline: none;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .input-container input::placeholder{
+        color: #949494;
+    }
+
+    .highlight{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #6c63ff;
+        transition: width 0.3s ease;
+    }
+
+    .input-container input:focus + .highlight{
+        width: 100%;
+    }
+
+    @keyframes input-focus {
+        from {
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+        }
+
+        to {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+    }
+    .input-container input:focus {
+        outline: none;
+        animation: input-focus 0.3s ease;
+    }
+
+</style>
