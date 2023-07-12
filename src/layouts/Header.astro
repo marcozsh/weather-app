@@ -1,10 +1,91 @@
+---
+import Cloudy  from '../components/svg/cloudy.astro'
+---
 <header class="header">
-    <div id="header-logo">
-        <a href="#">
-            <img src="/src/assets/img/nube.png" alt="Logo" width="200px" height="200px">
-        </a>
-    </div>
     <nav id="header-nav">
-        <a href="#" >TEST</a>
+        <div class="input-container">
+            <img src="src/assets/img/lupa.png" id="lupa" alt="lupa">
+            <input type="text" class="location" id="location" placeholder="Ciudad">
+            <div class="highlight"></div>
+        </div>
+        <div class="weather-detail">
+            <Cloudy/>
+            <h3 class="degress">9°C</h3>
+            <p class="time-zone">lorem ipus laskdjfm</p>
+        </div>
     </nav>
 </header>
+
+<style>
+    #lupa{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 10px;
+        top: 30%;
+        cursor: pointer;
+    }
+     .input-container{
+        position: relative;
+    }
+    .input-container input{
+        font-size: 0.8em;
+        padding: 0.6em 1em;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        width: 40rem;
+        max-width: 250px;
+        height: 30px;
+        color: #fff;
+        background-color: transparent;
+    }
+    .input-container input:focus {
+        outline: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .input-container input::placeholder{
+        color: #dddddd;
+    }
+    .highlight{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        transition: width 0.3s ease;
+    }
+    .input-container input:focus + .highlight{
+        width: 100%;
+    }
+    @keyframes input-focus {
+        from {
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+        }
+
+        to {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+    }
+    .input-container input:focus {
+        outline: none;
+        animation: input-focus 0.3s ease;
+    }
+    .weather-detail{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .degress{
+        font-size: 1.8rem;
+    }
+    .weather-icon{
+        width: 40px;
+
+    }
+    .weather-detail p{
+        margin-left: 15px;
+    }
+</style>

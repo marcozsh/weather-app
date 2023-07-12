@@ -1,10 +1,12 @@
 /*GLOBAL PARAMETRES*/
 :root {
-    --background: linear-gradient(220.55deg, #418CB7 0%, #FF8570 100%);
+    --background-cold: linear-gradient(220.55deg, #5D85A6 0%, #d8d8d8  100%);
+    --background-warm: linear-gradient(220.55deg, #5D85A6 0%, #FFA500 50%, #000 100%)
+
 }
 
 html {
-    background: var(--background);
+    background: var(--background-warm);
     font-family: 'Comfortaa';
     color: white;
     scroll-behavior: smooth;
@@ -27,10 +29,9 @@ body {
     background-color: rgba(0, 0, 0, .4);
     backdrop-filter: blur(200px);
     display: flex;
-    width: 14rem;
+    width: 20rem;
     height: 100vh;
     flex-direction: column;
-    justify-content: center;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -40,7 +41,7 @@ body {
 
 .header-mobile {
     background-color: rgba(0, 0, 0, .4);
-    backdrop-filter: blur(200px);
+    backdrop-filter: blur(100rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,14 +96,13 @@ body {
     align-items: center;
 }
 
-.header #header-nav,
-.header-mobile #header-logo {
+.header #header-nav {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 8em 0px 8em 0px;
+    margin: 1em 0px 8em 0px;
 }
 
 /*HEADER*/
@@ -110,7 +110,7 @@ body {
 /*MAIN PAGE*/
 .main-page {
     width: auto;
-    padding-left: 15rem;
+    padding-left: 20rem;
     display: flex;
     flex-direction: column;
 }
