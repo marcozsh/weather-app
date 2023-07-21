@@ -14,11 +14,11 @@ const options = {
 //https://www.weatherapi.com
 const fetchRequest = (location = "",lat = "", long = "", options) => {
     if (location !== "") {
-        return fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${location}&lang=es`, options)
+        return fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${location}&days=5&lang=es`, options)
         .then(response => response.json())
         .catch(err => err.json())   
     }
-    return fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${lat},${long}&lang=es`, options)
+    return fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${lat},${long}&days=5&lang=es`, options)
     .then(response => response.json())
     .catch(err => err.json())
 }
@@ -46,6 +46,7 @@ const getLocalWeather = () => {
       .then(async pos => {
         const { latitude, longitude } = pos.coords
         const data = await fetchRequest("", latitude, longitude, options)
+        console.log(data)
         const weatherObj = JSON.parse(JSON.stringify(data))
         fillData(weatherObj)
         

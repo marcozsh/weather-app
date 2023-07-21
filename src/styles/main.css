@@ -1,7 +1,7 @@
 /*GLOBAL PARAMETRES*/
 :root {
-    --background: linear-gradient(220.55deg, #2e3336 0%, #242323  100%);
-
+    --background: linear-gradient(220.55deg, #212121 0%, #2c3038 100%);
+    /*--background: linear-gradient(220.55deg, #181818 0%, #565656 100%);*/
 }
 
 html {

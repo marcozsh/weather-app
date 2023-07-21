@@ -1,29 +1,47 @@
 import Chart from 'chart.js/auto'
+import { days } from './getDay.js'
 
-(async function() {
-    const data = [
-      { year: 2010, count: 10 },
-      { year: 2011, count: 20 },
-      { year: 2012, count: 15 },
-      { year: 2013, count: 25 },
-      { year: 2014, count: 22 },
-      { year: 2015, count: 30 },
-      { year: 2016, count: 28 },
-    ];
-  
-    new Chart(
-      document.getElementById('chart'),
+
+
+const data = {
+    labels: Object.values(days),
+    datasets: [
       {
-        type: 'bar',
-        data: {
-          labels: data.map(row => row.year),
-          datasets: [
-            {
-              label: 'Acquisitions by year',
-              data: data.map(row => row.count)
-            }
-          ]
+        label: 'Temperaturas',
+        data: [2,3,4,1,23,23],
+        borderColor: 'rgb(0, 125, 255)',
+      },
+    ]
+  }
+  
+  
+  const chart_config = {
+    type: 'line',
+    data : data,
+    options: {
+        responsive: true,
+        plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Pronóstico 5 días',
+          color:'#fff'
+        }
+      },
+      scales: {
+        y: {
+          ticks: { color: 'white', beginAtZero: true }
+        },
+        x: {
+          ticks: { color: 'white', beginAtZero: true }
         }
       }
-    );
-})();
+    },
+  }
+
+const table = new Chart(
+  document.getElementById('chart'),
+  chart_config,
+);
