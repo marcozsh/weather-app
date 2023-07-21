@@ -1,28 +1,35 @@
 ---
 import '../styles/main.css'
+import Chart from './Chart.astro';
 ---
 <article class="landing">
-    <h1 class="title">
-        El Tiempo
-        <span>Ahora</span>
-    </h1>
+    <div class="icon">
+        <h2 class="title-icon">
+            El Tiempo
+            <span>Ahora</span>
+        </h2>
+    </div>
+
     <h2 class="weather-description">Soleado</h2>
     <img src="" alt="">
+</article>
+<article class="chart-article">
+    <Chart/>
 </article>
 
 <style>
     .landing{
         display: flex;
         flex-direction: column;
-        height: 100vh;
         padding-top: 20px;
         padding-left: 20px;
     }
-    .title{
-        font-size: 1.5rem;
+
+    .title-icon{
+        font-size: 1rem;
     }
-    .title span{
+    .title-icon span{
         display: block;
-        font-size: 2.5rem;
+        font-size: 1.6rem;
     }
 </style>

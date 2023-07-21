@@ -1,5 +1,7 @@
 import { ENV } from "../data/env.js"
-
+import { getDay } from "./getDay.js"
+import { getTime } from "./getDay.js"
+import { days } from "./getDay.js"
 const $ = element => document.querySelector(element)
 
 const options = {
@@ -9,7 +11,6 @@ const options = {
             'X-RapidAPI-Host': ENV.URL
         }
     }
-
 //https://www.weatherapi.com
 const fetchRequest = (location = "",lat = "", long = "", options) => {
     if (location !== "") {
@@ -23,17 +24,12 @@ const fetchRequest = (location = "",lat = "", long = "", options) => {
 }
 
 const fillData = (obj) => {
-    const cold = getComputedStyle(document.documentElement).getPropertyValue('--background-cold');
-    const warm = getComputedStyle(document.documentElement).getPropertyValue('--background-warm');
+    let time = getTime(obj.current.last_updated)
     $("#location").placeholder = `${obj.location.name}, ${obj.location.region}`
-    $(".degress").innerHTML = `${obj.current.temp_c}°C`
+    $(".degress").innerHTML = `${obj.current.temp_c}<p style="font-size:2rem;">°C</p>`
     $(".weather-description").innerHTML = `<strong>${obj.current.condition.text}</strong>`
-    $(".time-zone").innerHTML = obj.current.last_updated
-    if (obj.current.temp_c < 20) {
-        $("html").style.background = cold
-    }else{
-        $("html").style.background = warm
-    }
+    $(".time-zone").innerHTML = `<strong>${getDay(obj.current.last_updated, days)}</strong>, ${time[0]}:${time[1]}`
+    $("#weather-icon").src = obj.current.condition.icon
 }
 
 const getLocation = () => {

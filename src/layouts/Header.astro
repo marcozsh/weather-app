@@ -1,5 +1,4 @@
 ---
-import Cloudy  from '../components/svg/cloudy.astro'
 ---
 <header class="header">
     <nav id="header-nav">
@@ -9,10 +8,12 @@ import Cloudy  from '../components/svg/cloudy.astro'
             <div class="highlight"></div>
         </div>
         <div class="weather-detail">
-            <Cloudy/>
-            <h3 class="degress">9°C</h3>
-            <p class="time-zone">lorem ipus laskdjfm</p>
+            <img id="weather-icon" >
+            <h3 class="degress">9</h3>
         </div>
+    </nav>
+    <nav id="second-nav">
+        <p class="time-zone">2023-07-18 22:15</p>
     </nav>
 </header>
 
@@ -25,7 +26,7 @@ import Cloudy  from '../components/svg/cloudy.astro'
         top: 30%;
         cursor: pointer;
     }
-     .input-container{
+    .input-container{
         position: relative;
     }
     .input-container input{
@@ -79,13 +80,19 @@ import Cloudy  from '../components/svg/cloudy.astro'
         align-items: center;
     }
     .degress{
-        font-size: 1.8rem;
+        font-size: 4rem;
+        display: flex;
+        align-items: end;
     }
-    .weather-icon{
-        width: 40px;
+    #weather-icon{
+        width: 60px;
+        padding-top: 30px;
 
     }
     .weather-detail p{
         margin-left: 15px;
+    }
+    .time-zone{
+        padding-left: 23px;
     }
 </style>
